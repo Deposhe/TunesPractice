@@ -10,7 +10,7 @@
 		2239DCA3284386AA009951AF /* CoreDataStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2239DCA2284386AA009951AF /* CoreDataStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2239DCCB28438731009951AF /* Interfaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCCA28438731009951AF /* Interfaces.framework */; };
 		2239DCCC28438731009951AF /* Interfaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCCA28438731009951AF /* Interfaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2239DCDD28438963009951AF /* PersistentDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCDC28438963009951AF /* PersistentDataProvider.swift */; };
+		2239DCDD28438963009951AF /* CoreDataFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCDC28438963009951AF /* CoreDataFacade.swift */; };
 		2239DCE328438A37009951AF /* ModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCE228438A37009951AF /* ModelAdapter.swift */; };
 		2239DCE528438A69009951AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCE428438A69009951AF /* CoreData.framework */; };
 		2239DCE728438B97009951AF /* iTunesPractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCE12843898A009951AF /* iTunesPractice.xcdatamodeld */; };
@@ -35,7 +35,7 @@
 		2239DC9F284386AA009951AF /* CoreDataStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239DCA2284386AA009951AF /* CoreDataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStorage.h; sourceTree = "<group>"; };
 		2239DCCA28438731009951AF /* Interfaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Interfaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2239DCDC28438963009951AF /* PersistentDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentDataProvider.swift; sourceTree = "<group>"; };
+		2239DCDC28438963009951AF /* CoreDataFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFacade.swift; sourceTree = "<group>"; };
 		2239DCE02843898A009951AF /* iTunesAPI_practice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTunesAPI_practice.xcdatamodel; sourceTree = "<group>"; };
 		2239DCE228438A37009951AF /* ModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAdapter.swift; sourceTree = "<group>"; };
 		2239DCE428438A69009951AF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				2239DCE12843898A009951AF /* iTunesPractice.xcdatamodeld */,
-				2239DCDC28438963009951AF /* PersistentDataProvider.swift */,
+				2239DCDC28438963009951AF /* CoreDataFacade.swift */,
 				2239DD1228439ED2009951AF /* PersistentItemStorage.swift */,
 				2239DCE228438A37009951AF /* ModelAdapter.swift */,
 				2239DCA2284386AA009951AF /* CoreDataStorage.h */,
@@ -175,7 +175,7 @@
 			files = (
 				2239DCE728438B97009951AF /* iTunesPractice.xcdatamodeld in Sources */,
 				2239DCE328438A37009951AF /* ModelAdapter.swift in Sources */,
-				2239DCDD28438963009951AF /* PersistentDataProvider.swift in Sources */,
+				2239DCDD28438963009951AF /* CoreDataFacade.swift in Sources */,
 				2239DD1328439ED2009951AF /* PersistentItemStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -119,7 +119,6 @@ extension SearchVM: SearchResultModelDelegate {
     }
     
     func didSelectFavourite(viewModel: SearchResultCellVM, item: TunesItem) {
-        print("favourite saving")
         if storedItems.contains(item) {
             itemsStorage.remove(item: item)
         } else {
