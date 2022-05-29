@@ -7,140 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2239DCA3284386AA009951AF /* CoreDataStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2239DCA2284386AA009951AF /* CoreDataStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2239DCCB28438731009951AF /* Interfaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCCA28438731009951AF /* Interfaces.framework */; };
-		2239DCCC28438731009951AF /* Interfaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCCA28438731009951AF /* Interfaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2239DCDD28438963009951AF /* PersistentDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCDC28438963009951AF /* PersistentDataProvider.swift */; };
-		2239DCE328438A37009951AF /* ModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCE228438A37009951AF /* ModelAdapter.swift */; };
-		2239DCE528438A69009951AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCE428438A69009951AF /* CoreData.framework */; };
-		2239DCE728438B97009951AF /* iTunesPractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCE12843898A009951AF /* iTunesPractice.xcdatamodeld */; };
-		2239DD1328439ED2009951AF /* PersistentItemStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DD1228439ED2009951AF /* PersistentItemStorage.swift */; };
+		2239DCF8284391CC009951AF /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2239DCF7284391CC009951AF /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2239DD092843925F009951AF /* TunesItem+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DD082843925F009951AF /* TunesItem+Decodable.swift */; };
+		2239DD0B2843926C009951AF /* ITunesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DD0A2843926C009951AF /* ITunesNetworking.swift */; };
+		2239DD0D284392A9009951AF /* TunesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DD0C284392A9009951AF /* TunesResponse.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		2239DCCD28438731009951AF /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2239DCCC28438731009951AF /* Interfaces.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		2239DC9F284386AA009951AF /* CoreDataStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2239DCA2284386AA009951AF /* CoreDataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStorage.h; sourceTree = "<group>"; };
-		2239DCCA28438731009951AF /* Interfaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Interfaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2239DCDC28438963009951AF /* PersistentDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentDataProvider.swift; sourceTree = "<group>"; };
-		2239DCE02843898A009951AF /* iTunesAPI_practice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTunesAPI_practice.xcdatamodel; sourceTree = "<group>"; };
-		2239DCE228438A37009951AF /* ModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAdapter.swift; sourceTree = "<group>"; };
-		2239DCE428438A69009951AF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		2239DD1228439ED2009951AF /* PersistentItemStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentItemStorage.swift; sourceTree = "<group>"; };
+		2239DCF4284391CC009951AF /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2239DCF7284391CC009951AF /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		2239DD082843925F009951AF /* TunesItem+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TunesItem+Decodable.swift"; sourceTree = "<group>"; };
+		2239DD0A2843926C009951AF /* ITunesNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesNetworking.swift; sourceTree = "<group>"; };
+		2239DD0C284392A9009951AF /* TunesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2239DC9C284386AA009951AF /* Frameworks */ = {
+		2239DCF1284391CC009951AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2239DCCB28438731009951AF /* Interfaces.framework in Frameworks */,
-				2239DCE528438A69009951AF /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2239DC95284386AA009951AF = {
+		2239DCEA284391CC009951AF = {
 			isa = PBXGroup;
 			children = (
-				2239DCA1284386AA009951AF /* CoreDataStorage */,
-				2239DCA0284386AA009951AF /* Products */,
-				2239DCC928438731009951AF /* Frameworks */,
+				2239DCF6284391CC009951AF /* Networking */,
+				2239DCF5284391CC009951AF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2239DCA0284386AA009951AF /* Products */ = {
+		2239DCF5284391CC009951AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2239DC9F284386AA009951AF /* CoreDataStorage.framework */,
+				2239DCF4284391CC009951AF /* Networking.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2239DCA1284386AA009951AF /* CoreDataStorage */ = {
+		2239DCF6284391CC009951AF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2239DCE12843898A009951AF /* iTunesPractice.xcdatamodeld */,
-				2239DCDC28438963009951AF /* PersistentDataProvider.swift */,
-				2239DD1228439ED2009951AF /* PersistentItemStorage.swift */,
-				2239DCE228438A37009951AF /* ModelAdapter.swift */,
-				2239DCA2284386AA009951AF /* CoreDataStorage.h */,
+				2239DD0A2843926C009951AF /* ITunesNetworking.swift */,
+				2239DD0C284392A9009951AF /* TunesResponse.swift */,
+				2239DD082843925F009951AF /* TunesItem+Decodable.swift */,
+				2239DCF7284391CC009951AF /* Networking.h */,
 			);
-			path = CoreDataStorage;
-			sourceTree = "<group>";
-		};
-		2239DCC928438731009951AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2239DCE428438A69009951AF /* CoreData.framework */,
-				2239DCCA28438731009951AF /* Interfaces.framework */,
-			);
-			name = Frameworks;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2239DC9A284386AA009951AF /* Headers */ = {
+		2239DCEF284391CC009951AF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2239DCA3284386AA009951AF /* CoreDataStorage.h in Headers */,
+				2239DCF8284391CC009951AF /* Networking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2239DC9E284386AA009951AF /* CoreDataStorage */ = {
+		2239DCF3284391CC009951AF /* Networking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2239DCA6284386AA009951AF /* Build configuration list for PBXNativeTarget "CoreDataStorage" */;
+			buildConfigurationList = 2239DCFB284391CC009951AF /* Build configuration list for PBXNativeTarget "Networking" */;
 			buildPhases = (
-				2239DC9A284386AA009951AF /* Headers */,
-				2239DC9B284386AA009951AF /* Sources */,
-				2239DC9C284386AA009951AF /* Frameworks */,
-				2239DC9D284386AA009951AF /* Resources */,
-				2239DCCD28438731009951AF /* Embed Frameworks */,
+				2239DCEF284391CC009951AF /* Headers */,
+				2239DCF0284391CC009951AF /* Sources */,
+				2239DCF1284391CC009951AF /* Frameworks */,
+				2239DCF2284391CC009951AF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CoreDataStorage;
-			productName = CoreDataStorage;
-			productReference = 2239DC9F284386AA009951AF /* CoreDataStorage.framework */;
+			name = Networking;
+			productName = Networking;
+			productReference = 2239DCF4284391CC009951AF /* Networking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2239DC96284386AA009951AF /* Project object */ = {
+		2239DCEB284391CC009951AF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					2239DC9E284386AA009951AF = {
+					2239DCF3284391CC009951AF = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
-			buildConfigurationList = 2239DC99284386AA009951AF /* Build configuration list for PBXProject "CoreDataStorage" */;
+			buildConfigurationList = 2239DCEE284391CC009951AF /* Build configuration list for PBXProject "Networking" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -148,18 +114,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 2239DC95284386AA009951AF;
-			productRefGroup = 2239DCA0284386AA009951AF /* Products */;
+			mainGroup = 2239DCEA284391CC009951AF;
+			productRefGroup = 2239DCF5284391CC009951AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2239DC9E284386AA009951AF /* CoreDataStorage */,
+				2239DCF3284391CC009951AF /* Networking */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2239DC9D284386AA009951AF /* Resources */ = {
+		2239DCF2284391CC009951AF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -169,21 +135,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2239DC9B284386AA009951AF /* Sources */ = {
+		2239DCF0284391CC009951AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2239DCE728438B97009951AF /* iTunesPractice.xcdatamodeld in Sources */,
-				2239DCE328438A37009951AF /* ModelAdapter.swift in Sources */,
-				2239DCDD28438963009951AF /* PersistentDataProvider.swift in Sources */,
-				2239DD1328439ED2009951AF /* PersistentItemStorage.swift in Sources */,
+				2239DD092843925F009951AF /* TunesItem+Decodable.swift in Sources */,
+				2239DD0B2843926C009951AF /* ITunesNetworking.swift in Sources */,
+				2239DD0D284392A9009951AF /* TunesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2239DCA4284386AA009951AF /* Debug */ = {
+		2239DCF9284391CC009951AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		2239DCA5284386AA009951AF /* Release */ = {
+		2239DCFA284391CC009951AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -305,9 +270,10 @@
 			};
 			name = Release;
 		};
-		2239DCA7284386AA009951AF /* Debug */ = {
+		2239DCFC284391CC009951AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -324,19 +290,20 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rs.CoreDataStorage;
+				PRODUCT_BUNDLE_IDENTIFIER = rs.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		2239DCA8284386AA009951AF /* Release */ = {
+		2239DCFD284391CC009951AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -353,50 +320,37 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rs.CoreDataStorage;
+				PRODUCT_BUNDLE_IDENTIFIER = rs.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2239DC99284386AA009951AF /* Build configuration list for PBXProject "CoreDataStorage" */ = {
+		2239DCEE284391CC009951AF /* Build configuration list for PBXProject "Networking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2239DCA4284386AA009951AF /* Debug */,
-				2239DCA5284386AA009951AF /* Release */,
+				2239DCF9284391CC009951AF /* Debug */,
+				2239DCFA284391CC009951AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2239DCA6284386AA009951AF /* Build configuration list for PBXNativeTarget "CoreDataStorage" */ = {
+		2239DCFB284391CC009951AF /* Build configuration list for PBXNativeTarget "Networking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2239DCA7284386AA009951AF /* Debug */,
-				2239DCA8284386AA009951AF /* Release */,
+				2239DCFC284391CC009951AF /* Debug */,
+				2239DCFD284391CC009951AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2239DCE12843898A009951AF /* iTunesPractice.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2239DCE02843898A009951AF /* iTunesAPI_practice.xcdatamodel */,
-			);
-			currentVersion = 2239DCE02843898A009951AF /* iTunesAPI_practice.xcdatamodel */;
-			path = iTunesPractice.xcdatamodeld;
-			sourceTree = "<group>";
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 2239DC96284386AA009951AF /* Project object */;
+	rootObject = 2239DCEB284391CC009951AF /* Project object */;
 }

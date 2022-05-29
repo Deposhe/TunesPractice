@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2239DCBD284386EA009951AF /* Interfaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 2239DCBC284386EA009951AF /* Interfaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2239DCD928438906009951AF /* TunesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCD828438906009951AF /* TunesItem.swift */; };
+		2239DCDB2843893C009951AF /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCDA2843893C009951AF /* MediaType.swift */; };
+		2239DCE928438CB9009951AF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DCE828438CB9009951AF /* Storage.swift */; };
+		2239DD0728439219009951AF /* NetworkingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DD0628439219009951AF /* NetworkingInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2239DCB9284386EA009951AF /* Interfaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Interfaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239DCBC284386EA009951AF /* Interfaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interfaces.h; sourceTree = "<group>"; };
+		2239DCD828438906009951AF /* TunesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesItem.swift; sourceTree = "<group>"; };
+		2239DCDA2843893C009951AF /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		2239DCE828438CB9009951AF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		2239DD0628439219009951AF /* NetworkingInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 		2239DCAF284386EA009951AF = {
 			isa = PBXGroup;
 			children = (
+				2239DD1128439762009951AF /* Models */,
 				2239DCBB284386EA009951AF /* Interfaces */,
 				2239DCBA284386EA009951AF /* Products */,
 			);
@@ -45,9 +54,20 @@
 		2239DCBB284386EA009951AF /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				2239DD0628439219009951AF /* NetworkingInterface.swift */,
+				2239DCE828438CB9009951AF /* Storage.swift */,
 				2239DCBC284386EA009951AF /* Interfaces.h */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		2239DD1128439762009951AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2239DCD828438906009951AF /* TunesItem.swift */,
+				2239DCDA2843893C009951AF /* MediaType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2239DCDB2843893C009951AF /* MediaType.swift in Sources */,
+				2239DD0728439219009951AF /* NetworkingInterface.swift in Sources */,
+				2239DCD928438906009951AF /* TunesItem.swift in Sources */,
+				2239DCE928438CB9009951AF /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,7 +5,10 @@
 //  Created by Serge Rylko on 27.05.22.
 //
 
+import CoreDataStorage
 import Combine
+import Interfaces
+import Networking
 
 final class RootTabVM {
     
@@ -13,16 +16,16 @@ final class RootTabVM {
     private (set) var badgeValue: String?
     
     private lazy var networking: Networking = ITunesNetworking()
-    private lazy var storage: Storage = PersistentStorage()
+    private lazy var storage: Storage = StorageService(itemStorage: PersistentItemStorage())
     private lazy var searchVM = SearchVM(networking: networking, storage: storage)
-    private lazy var favouritesVM = FavouritesVM(storage: storage)
+    private lazy var favouritesVM = FavouritesVM(itemStorage: storage.itemStorage)
  
     init() {
         setupSubscriptions()
     }
     
     private func setupSubscriptions() {
-        storage
+        storage.itemStorage
             .getItemsPublisher()
             .map { $0.isEmpty ? nil : String($0.count) }
             .assign(to: &$badgeValue)

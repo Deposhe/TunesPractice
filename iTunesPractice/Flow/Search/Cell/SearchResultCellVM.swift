@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Interfaces
 
 protocol SearchResultModelDelegate: AnyObject {
     func getFavouritePublisher(viewModel: SearchResultCellVM, for item: TunesItem) -> AnyPublisher<Bool, Never>

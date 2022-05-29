@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Interfaces
 
 struct TunesResponse: Decodable {
     let results: [TunesItem]

@@ -7,17 +7,14 @@
 
 import Foundation
 import Combine
-
-protocol Networking {
-    func request(searchText: String, mediaTypes: [MediaType]) -> AnyPublisher<[TunesItem], Error>
-}
+import Interfaces
 
 enum NetworkingError: Error {
     case urlMissconfiguration
     case limitReached
 }
 
-final class ITunesNetworking: Networking {
+final public class ITunesNetworking: Networking {
 
     private static let baseURL = URL(string: "https://itunes.apple.com/search")!
     private static let countryCode = "Us"
@@ -26,7 +23,9 @@ final class ITunesNetworking: Networking {
         URLSession(configuration: .default)
     }()
     
-    func request(searchText: String, mediaTypes: [MediaType]) -> AnyPublisher<[TunesItem], Error> {
+    public init() { }
+    
+    public func request(searchText: String, mediaTypes: [MediaType]) -> AnyPublisher<[TunesItem], Error> {
 
         let publisher = buildURLs(searchText: searchText, mediaTypes: mediaTypes)
             .tryCompactMap({ $0 })

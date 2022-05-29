@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import Interfaces
 
 protocol FavouriteCellViewModelDelegate: AnyObject {
     func didRemoveItem(delegate: FavouriteCellVM, item: TunesItem)

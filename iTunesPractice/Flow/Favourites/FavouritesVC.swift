@@ -8,7 +8,6 @@
 import Combine
 import Foundation
 import UIKit
-import AVFoundation
 
 final class FavouritesVC: UIViewController {
     

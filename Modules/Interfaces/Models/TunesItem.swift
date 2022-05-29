@@ -7,13 +7,13 @@
 
 import Foundation
 
-final class TunesItem {
+final public class TunesItem {
     
-    let title: String
-    let id: String
-    let imageURL: URL
+    public let title: String
+    public let id: String
+    public let imageURL: URL
     
-    init(title: String, id: String, imageURL: URL) {
+    public init(title: String, id: String, imageURL: URL) {
         self.title = title
         self.id = id
         self.imageURL = imageURL
@@ -22,11 +22,11 @@ final class TunesItem {
 
 extension TunesItem: Hashable {
     
-    static func == (lhs: TunesItem, rhs: TunesItem) -> Bool {
+    public static func == (lhs: TunesItem, rhs: TunesItem) -> Bool {
         lhs.id == rhs.id
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }

@@ -8,10 +8,18 @@
 import Combine
 import Foundation
 
-protocol Storage {
+public protocol Storage {
+    var itemStorage: ItemStorage { get }
+    init(itemStorage: ItemStorage)
+}
+
+public protocol ItemStorage {
     func get(itemBy id: String) -> TunesItem?
     func save(item: TunesItem)
     func remove(item: TunesItem)
     func getItems() -> [TunesItem]
     func getItemsPublisher() -> AnyPublisher<[TunesItem], Never>
+    func refresh()
 }
+
+

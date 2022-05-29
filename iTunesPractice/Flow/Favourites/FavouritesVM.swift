@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-import AVFoundation
+import Interfaces
 
 final class FavouritesVM {
 
@@ -22,23 +22,23 @@ final class FavouritesVM {
     private(set) var removeConfirmation = PassthroughSubject<RemoveConfirmation, Never>()
     private var removableItemTitle: String?
     
-    private let storage: Storage
+    private let itemStorage: ItemStorage
     private let soundService = SoundService()
     
-    init(storage: Storage) {
-        self.storage = storage
+    init(itemStorage: ItemStorage) {
+        self.itemStorage = itemStorage
         setupSubscriptions()
     }
     
     private func setupSubscriptions() {
-        storage.getItemsPublisher()
+        itemStorage.getItemsPublisher()
             .map { $0.map { FavouriteCellVM(item: $0, delegate: self) } }
             .map { $0.sorted(by: Constants.sorting) }
             .assign(to: &$cellViewModels)
     }
     
     private func performRemoveActions(for item: TunesItem) {
-        storage.remove(item: item)
+        itemStorage.remove(item: item)
         removableItemTitle = nil
         soundService.play(.removeFavourite)
         

@@ -10,4 +10,7 @@
    <FileRef
       location = "group:Modules/Interfaces/Interfaces.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Modules/Interfaces/../Networking/Networking.xcodeproj">
+   </FileRef>
 </Workspace>

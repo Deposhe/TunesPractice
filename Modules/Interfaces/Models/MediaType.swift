@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MediaType:  String, Decodable, CaseIterable {
+public enum MediaType:  String, Decodable, CaseIterable {
     case music = "music"
     case book = "ebook"
     case soft = "software"

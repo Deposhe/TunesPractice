@@ -6,10 +6,11 @@
 //
 
 import CoreData
+import Interfaces
 
 extension TunesItem {
     
-    convenience init(from dbItem: DBITunesItem) {
+    convenience public init(from dbItem: DBITunesItem) {
         self.init(title: dbItem.title!,
                   id: dbItem.trackId!,
                   imageURL: dbItem.imageURI!)
@@ -18,7 +19,7 @@ extension TunesItem {
 
 extension DBITunesItem {
     
-    convenience init(context: NSManagedObjectContext, item: TunesItem) {
+    convenience public init(context: NSManagedObjectContext, item: TunesItem) {
         self.init(context: context)
         self.imageURI = item.imageURL
         self.title = item.title

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Interfaces
 
 extension TunesItem: Decodable {
     
@@ -16,7 +16,7 @@ extension TunesItem: Decodable {
         case imageURL = "artworkUrl100"
     }
     
-    convenience init(from decoder: Decoder) throws {
+    convenience public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let title = try container.decode(String.self, forKey: .title)
         let integerId = try container.decode(Int.self, forKey: .id)

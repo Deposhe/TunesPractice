@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import Interfaces
 
 final class SearchVM {
     
@@ -41,11 +42,12 @@ final class SearchVM {
     private var cancellables = Set<AnyCancellable>()
     
     private let networking: Networking
-    private let storage: Storage
+//    private let storage: Storage
+    private let itemsStorage: ItemStorage
 
     init(networking: Networking, storage: Storage) {
         self.networking = networking
-        self.storage = storage
+        self.itemsStorage = storage.itemStorage
         setupSubscriptions()
     }
     
@@ -62,7 +64,7 @@ final class SearchVM {
             .map { $0.sorted(by: Constants.sorting) }
             .assign(to: &$cellViewModels)
         
-        storage.getItemsPublisher()
+        itemsStorage.getItemsPublisher()
             .receive(on: DispatchQueue.main)
             .assign(to: &$storedItems)
     }
@@ -103,9 +105,9 @@ extension SearchVM: SearchResultModelDelegate {
     
     func didSelectFavourite(viewModel: SearchResultCellVM, item: TunesItem) {
         if storedItems.contains(item) {
-            storage.remove(item: item)
+            itemsStorage.remove(item: item)
         } else {
-            storage.save(item: item)
+            itemsStorage.save(item: item)
         }
     } 
 }
