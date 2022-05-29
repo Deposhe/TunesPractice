@@ -13,7 +13,8 @@ extension TunesItem {
     convenience public init(from dbItem: DBITunesItem) {
         self.init(title: dbItem.title!,
                   id: dbItem.trackId!,
-                  imageURL: dbItem.imageURI!)
+                  imageURL: dbItem.imageURI!,
+                  imageData: dbItem.imageData)
     }
 }
 
@@ -24,5 +25,6 @@ extension DBITunesItem {
         self.imageURI = item.imageURL
         self.title = item.title
         self.trackId = item.id
+        self.imageData = item.imageData
     }
 }

@@ -12,11 +12,13 @@ final public class TunesItem {
     public let title: String
     public let id: String
     public let imageURL: URL
+    public var imageData: Data?
     
-    public init(title: String, id: String, imageURL: URL) {
+    public init(title: String, id: String, imageURL: URL, imageData: Data?) {
         self.title = title
         self.id = id
         self.imageURL = imageURL
+        self.imageData = imageData
     }
 }
 

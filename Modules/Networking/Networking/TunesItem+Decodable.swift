@@ -25,6 +25,7 @@ extension TunesItem: Decodable {
         
         self.init(title: title,
                   id: id,
-                  imageURL: imageURL)
+                  imageURL: imageURL,
+                  imageData: nil)
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import Combine
-import Kingfisher
 import UIKit
 
 final class FavouriteCell: UITableViewCell {
@@ -78,18 +77,12 @@ final class FavouriteCell: UITableViewCell {
         viewModel.$title
             .assign(to: \.text , on: titleLabel)
             .store(in: &cancellables)
-        
-        viewModel.$imageURL.sink { [unowned self] url in
-            self.setImage(url: url)
-        }.store(in: &cancellables)
-    }
-    
-    private func setImage(url: URL?) {
-        if let url = url {
-            iconImageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-        } else {
-            iconImageView.image = nil
-        }
+
+        viewModel.$imageData
+            .compactMap({ $0 })
+            .map({ UIImage(data: $0) })
+            .assign(to: \.image, on: iconImageView)
+            .store(in: &cancellables)
     }
     
     @objc private func didPressRemoveButton(_ sender: Any) {

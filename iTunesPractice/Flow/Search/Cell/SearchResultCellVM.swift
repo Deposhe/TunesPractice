@@ -12,9 +12,12 @@ import Interfaces
 protocol SearchResultModelDelegate: AnyObject {
     func getFavouritePublisher(viewModel: SearchResultCellVM, for item: TunesItem) -> AnyPublisher<Bool, Never>
     func didSelectFavourite(viewModel: SearchResultCellVM, item: TunesItem)
+    func didLoadImageData(viewModel: SearchResultCellVM, item: TunesItem, imageData: Data?)
 }
 
 final class SearchResultCellVM {
+    
+    typealias ImageDataRequest = ((Data?) -> Void)
     
     @Published
     var isFavourite = false
@@ -24,6 +27,13 @@ final class SearchResultCellVM {
 
     @Published
     private(set) var imageURL: URL
+    
+    @Published
+    var imageData: Data?
+    
+    let dataSubscription = PassthroughSubject<ImageDataRequest, Never>()
+    
+    private var cancellables = Set<AnyCancellable>()
     
     private let item: TunesItem
     private unowned let delegate: SearchResultModelDelegate
@@ -41,9 +51,20 @@ final class SearchResultCellVM {
         delegate.getFavouritePublisher(viewModel: self, for: item)
             .assign(to: &$isFavourite)
     }
-    
+
     func didPressFavouriteButton() {
+        dataSubscription.send { [weak self] data in
+            guard let self = self else { return }
+            self.delegate.didLoadImageData(viewModel: self, item: self.item, imageData: data)
+        }
+        dataSubscription.send(completion: .finished)
+
         delegate.didSelectFavourite(viewModel: self, item: item)
+    }
+    
+    func getDataRequestPublisher() -> AnyPublisher<ImageDataRequest, Never> {
+        dataSubscription
+            .eraseToAnyPublisher()
     }
 }
 

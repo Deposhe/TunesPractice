@@ -36,9 +36,9 @@ class RootTabVC: UITabBarController {
     
     private func setupControllers() {
         let searchVM = viewModel.getSearchViewModel()
-        let searchController = wrapNavigation(SearchVC(viewModel: searchVM))
-        searchController.navigationController?.navigationBar.backgroundColor = .white
-        searchController.tabBarItem = .init(title: viewModel.getSearchTitle(),
+        let searchVC = wrapNavigation(SearchVC(viewModel: searchVM))
+        searchVC.navigationController?.navigationBar.backgroundColor = .white
+        searchVC.tabBarItem = .init(title: viewModel.getSearchTitle(),
                                             image: .init(named: "tabbar_search"),
                                             selectedImage: nil)
         
@@ -48,7 +48,7 @@ class RootTabVC: UITabBarController {
                                         image: .init(named: "tabbar_favourites"),
                                         selectedImage: nil)
         
-        setViewControllers([searchController, favouritesVC], animated: false)
+        setViewControllers([searchVC, favouritesVC], animated: false)
     }
     
     private func setupBinding() {

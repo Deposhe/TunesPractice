@@ -15,6 +15,7 @@
 		2239DCD328438746009951AF /* Interfaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DCD128438746009951AF /* Interfaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2239DD0F284392E4009951AF /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DD0E284392E4009951AF /* Networking.framework */; };
 		2239DD10284392E4009951AF /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2239DD0E284392E4009951AF /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2239DD172843FDB9009951AF /* UIImage+CIFIlter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239DD162843FDB9009951AF /* UIImage+CIFIlter.swift */; };
 		2263B527283CCA75004B50B7 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263B526283CCA75004B50B7 /* SearchVC.swift */; };
 		2263B52A283CCA8E004B50B7 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263B529283CCA8E004B50B7 /* SearchVM.swift */; };
 		2263B52C283D047F004B50B7 /* SearchResultCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263B52B283D047F004B50B7 /* SearchResultCellVM.swift */; };
@@ -72,6 +73,7 @@
 		2239DCCE2843873E009951AF /* CoreDataStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreDataStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239DCD128438746009951AF /* Interfaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Interfaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239DD0E284392E4009951AF /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2239DD162843FDB9009951AF /* UIImage+CIFIlter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CIFIlter.swift"; sourceTree = "<group>"; };
 		2263B526283CCA75004B50B7 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		2263B529283CCA8E004B50B7 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		2263B52B283D047F004B50B7 /* SearchResultCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellVM.swift; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		2239DC502842B85E009951AF /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				22ECCBFA283599400054FEBF /* AppDelegate.swift */,
+				22ECCBFC283599400054FEBF /* SceneDelegate.swift */,
 				2263B528283CCA79004B50B7 /* Search */,
 				2263B540283F7459004B50B7 /* Favourites */,
 				2263B541283F7477004B50B7 /* Root */,
@@ -161,6 +165,7 @@
 				228D00562841436900D8A281 /* Publisher+Debug.swift */,
 				2263B531283D0CFB004B50B7 /* UISearchTextField+Combine.swift */,
 				2263B538283D3DA6004B50B7 /* UIViewController+Keyboard.swift */,
+				2239DD162843FDB9009951AF /* UIImage+CIFIlter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,8 +247,6 @@
 		22ECCBF9283599400054FEBF /* iTunesPractice */ = {
 			isa = PBXGroup;
 			children = (
-				22ECCBFA283599400054FEBF /* AppDelegate.swift */,
-				22ECCBFC283599400054FEBF /* SceneDelegate.swift */,
 				2239DC502842B85E009951AF /* Flow */,
 				2263B544283F74B5004B50B7 /* Services */,
 				2263B530283D0CED004B50B7 /* Extensions */,
@@ -393,6 +396,7 @@
 				2263B535283D28D8004B50B7 /* FilterControl.swift in Sources */,
 				22ECCBFB283599400054FEBF /* AppDelegate.swift in Sources */,
 				2263B537283D31DB004B50B7 /* FilterControlButton.swift in Sources */,
+				2239DD172843FDB9009951AF /* UIImage+CIFIlter.swift in Sources */,
 				2263B53F283F7452004B50B7 /* FavouritesVM.swift in Sources */,
 				2263B543283F749D004B50B7 /* RootTabVC.swift in Sources */,
 				228D004F28411AF300D8A281 /* FavouriteCell.swift in Sources */,

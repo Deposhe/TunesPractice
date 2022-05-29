@@ -19,7 +19,7 @@ final class FavouriteCellVM {
     private(set) var title: String?
     
     @Published
-    private(set) var imageURL: URL?
+    private(set) var imageData: Data?
     
     private let item: TunesItem
     private unowned let delegate: FavouriteCellViewModelDelegate
@@ -28,7 +28,7 @@ final class FavouriteCellVM {
         self.item = item
         self.delegate = delegate
         self.title = item.title
-        self.imageURL = item.imageURL
+        self.imageData = item.imageData
     }
     
     func didTapRemoveFavourite() {

@@ -97,6 +97,11 @@ final class SearchVM {
 
 extension SearchVM: SearchResultModelDelegate {
     
+    func didLoadImageData(viewModel: SearchResultCellVM, item: TunesItem, imageData: Data?) {
+        guard let imageData = imageData else { return }
+        item.imageData = imageData
+    }
+    
     func getFavouritePublisher(viewModel: SearchResultCellVM, for item: TunesItem) -> AnyPublisher<Bool, Never> {
         $storedItems
             .map({ $0.contains(where: { $0.id == item.id }) })
@@ -104,6 +109,7 @@ extension SearchVM: SearchResultModelDelegate {
     }
     
     func didSelectFavourite(viewModel: SearchResultCellVM, item: TunesItem) {
+        print("favourite saving")
         if storedItems.contains(item) {
             itemsStorage.remove(item: item)
         } else {

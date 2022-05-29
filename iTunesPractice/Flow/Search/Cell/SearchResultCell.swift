@@ -47,6 +47,12 @@ final class SearchResultCell: UITableViewCell {
         viewModel.$imageURL.sink { [unowned self] url in
             self.setImage(url: url)
         }.store(in: &cancellables)
+        
+        viewModel.getDataRequestPublisher()
+            .sink { _ in
+            } receiveValue: { [weak self] resolver in
+                self?.resolveImageData(resolver: resolver)
+            }.store(in: &cancellables)
     }
     
     private func setupUI() {
@@ -95,9 +101,14 @@ final class SearchResultCell: UITableViewCell {
         iconImageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
     }
     
+    private func resolveImageData(resolver: (Data?) -> Void) {
+        let data = iconImageView.image?.grayscale()?.jpegData(compressionQuality: 1.0)
+        resolver(data)
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        iconImageView.kf.cancelDownloadTask()
+        
         iconImageView.image = nil
         cancellables.forEach({ $0.cancel() })
         cancellables.removeAll()
