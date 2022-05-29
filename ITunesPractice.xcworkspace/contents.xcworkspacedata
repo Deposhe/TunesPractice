@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:iTunesPractice.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/CoreDataStorage/CoreDataStorage.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Interfaces/Interfaces.xcodeproj">
+   </FileRef>
+</Workspace>

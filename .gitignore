@@ -1,0 +1,9 @@
+
+
+xcuserdata/
+/builds
+.DS_Store
+/.idea
+.swiftpm
+/DerivedData
+
