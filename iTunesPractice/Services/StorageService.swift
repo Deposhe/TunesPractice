@@ -10,9 +10,11 @@ import Interfaces
 final class StorageService: Storage {
     
     let itemStorage: ItemStorage
+    let searchHistoryStorage: SearchHistoryStorage
     
-    init(itemStorage: ItemStorage) {
+    init(itemStorage: ItemStorage, searchHistoryStorage: SearchHistoryStorage) {
         self.itemStorage = itemStorage
+        self.searchHistoryStorage = searchHistoryStorage
     }
 }
 

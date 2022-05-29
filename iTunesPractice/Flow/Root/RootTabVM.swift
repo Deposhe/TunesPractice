@@ -16,7 +16,10 @@ final class RootTabVM {
     private (set) var badgeValue: String?
     
     private lazy var networking: Networking = ITunesNetworking()
-    private lazy var storage: Storage = StorageService(itemStorage: PersistentItemStorage())
+    private lazy var storage: Storage = {
+        StorageService(itemStorage: PersistentItemStorage(),
+                       searchHistoryStorage: UserDefaultsStorage())
+    }()
     private lazy var searchVM = SearchVM(networking: networking, storage: storage)
     private lazy var favouritesVM = FavouritesVM(itemStorage: storage.itemStorage)
  

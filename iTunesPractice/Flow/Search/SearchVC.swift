@@ -80,17 +80,19 @@ final class SearchVC: UIViewController {
                 self?.update(by: viewModels)
             }.store(in: &cancellables)
         
-        viewModel.$mediaTitles
+        viewModel.$filterTitles
             .map({ $0 })
             .assign(to: \.items, on: mediaControl)
             .store(in: &cancellables)
-        
-        searchBar.textPublisher
-            .assign(to: &viewModel.$searchText)
-        
+
         mediaControl.$selectedItems
             .assign(to: &viewModel.$selectedMediaTypeIndexes)
         
+        searchBar.text = viewModel.getInitialSearch()
+        
+        searchBar.textPublisher
+            .assign(to: &viewModel.$searchText)
+ 
         keyboardApeparance()
             .sink { [weak self] offset in
                 guard let self = self else { return }

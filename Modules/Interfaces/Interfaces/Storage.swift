@@ -10,7 +10,8 @@ import Foundation
 
 public protocol Storage {
     var itemStorage: ItemStorage { get }
-    init(itemStorage: ItemStorage)
+    var searchHistoryStorage: SearchHistoryStorage { get }
+    init(itemStorage: ItemStorage, searchHistoryStorage: SearchHistoryStorage)
 }
 
 public protocol ItemStorage {
@@ -20,6 +21,11 @@ public protocol ItemStorage {
     func getItems() -> [TunesItem]
     func getItemsPublisher() -> AnyPublisher<[TunesItem], Never>
     func refresh()
+}
+
+public protocol SearchHistoryStorage {
+    func getLatestSearchText() -> String?
+    func saveLatestSearchText(searchText: String?)
 }
 
 

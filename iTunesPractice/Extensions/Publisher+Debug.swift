@@ -7,7 +7,6 @@
 
 import Combine
 
-#if DEBUG
 extension Publisher {
     func tap( _ closure: @escaping (Self.Output) -> Void) ->  AnyPublisher<Self.Output, Failure> {
         return self.map { value in
@@ -16,4 +15,3 @@ extension Publisher {
         }.eraseToAnyPublisher()
     }
 }
-#endif

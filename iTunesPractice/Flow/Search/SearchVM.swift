@@ -32,7 +32,7 @@ final class SearchVM {
     private(set) var cellViewModels: [SearchResultCellVM] = []
     
     @Published
-    var mediaTitles = filters
+    var filterTitles = filters
         .map { $0.rawValue }
         .map { $0.capitalized }
     
@@ -42,12 +42,14 @@ final class SearchVM {
     private var cancellables = Set<AnyCancellable>()
     
     private let networking: Networking
-//    private let storage: Storage
     private let itemsStorage: ItemStorage
+    private let historyStorage: SearchHistoryStorage
 
     init(networking: Networking, storage: Storage) {
         self.networking = networking
         self.itemsStorage = storage.itemStorage
+        self.historyStorage = storage.searchHistoryStorage
+   
         setupSubscriptions()
     }
     
@@ -79,9 +81,13 @@ final class SearchVM {
     }
     
     private func getSearchTextPublisher() -> AnyPublisher<String?, Never> {
-        $searchText
+        searchText = getInitialSearch()
+        return $searchText
             .drop(while: { $0?.isEmpty == true })
             .removeDuplicates()
+            .tap({ [unowned self] search in
+                self.historyStorage.saveLatestSearchText(searchText: search)
+            })
             .eraseToAnyPublisher()
     }
     
@@ -92,6 +98,10 @@ final class SearchVM {
             .map({ $0.map { SearchVM.filters[$0] } })
             .replaceEmptyCollection(with: SearchVM.filters)
             .eraseToAnyPublisher()
+    }
+    
+    func getInitialSearch() -> String? {
+        historyStorage.getLatestSearchText()
     }
 }
 
